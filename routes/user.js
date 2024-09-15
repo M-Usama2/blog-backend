@@ -18,5 +18,8 @@ router.get("/profile", profile);
 router.get("/post", getPost);
 router.post("/logout", logout);
 router.post("/post", uploadMiddleware.single("file"), post);
+router.get("/header", (req, res) => {
+  res.json("hello");
+});
 
 export default router;
