@@ -19,6 +19,9 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 connectDb();
 
 app.use("/api", auth);
+app.use("/health", (req, res) => {
+  res.json("Hello");
+});
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is Listening on PORT: ${process.env.PORT}`);
